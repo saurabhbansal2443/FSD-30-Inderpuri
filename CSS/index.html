@@ -15,13 +15,32 @@
         6) Combinators 
          */
       /* Element selector  */
-      h1 {
+      /* h1 {
         font-family: cursive;
       }
-      span{
+      span {
         font-weight: 900;
+      } */
+      /*  Class selector  */
+      /* .head {
+        color: blueviolet;
       }
-      
+      .body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      } */
+      /*  Design Tokens */
+      .bgPrimary {
+        background-color: rgb(237, 237, 40);
+      }
+      .bgSecondary {
+        background-color: blue;
+      }
+      .textPrimary {
+        color: black;
+      }
+      .textSecondary {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -34,8 +53,8 @@
     <h1 style="background-color: red; color: white">I am heading tag</h1>
 
     <!--  Internal CSS  -->
-    <h1>I am heading tag 2</h1>
-    <p>Lorem ipsum dolor sit amet.</p>
+    <h1 class="bgPrimary textPrimary">I am heading tag 2</h1>
+    <p class="bgSecondary textSecondary">Lorem ipsum dolor sit amet.</p>
     <span>Lorem ipsum dolor sit amet consectetur.</span>
   </body>
 </html>
