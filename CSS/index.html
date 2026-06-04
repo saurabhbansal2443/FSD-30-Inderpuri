@@ -46,6 +46,18 @@
       #unique {
         color: rgb(255, 33, 66);
       }
+      /*  Universal Selector */
+      * {
+        font-family: cursive;
+        color: blue;
+        background-color: black;
+      }
+
+      /*  Attribute Selector */
+
+      [href="https://www.netflix.com/in/"] {
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
@@ -60,6 +72,10 @@
     <!--  Internal CSS  -->
     <h1 class="bgPrimary textPrimary">I am heading tag 2</h1>
     <p class="bgSecondary textSecondary">Lorem ipsum dolor sit amet.</p>
-    <span   >Lorem ipsum dolor sit amet consectetur.</span>
+    <span id="unique">Lorem ipsum dolor sit amet consectetur.</span>
+
+    <h3>I am heading 3</h3>
+
+    <a href="https://www.netflix.com/in/">Netflix.com</a>
   </body>
 </html>
