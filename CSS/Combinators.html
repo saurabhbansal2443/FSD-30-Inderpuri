@@ -6,6 +6,8 @@
     <title>Document</title>
     <style>
       /* space (_) , > , + , ~  */
+      /*  + will select the adjacent sibling 
+      ~ will select all the adjacent siblings  */
       /* .parent p {
         color: blue;
       } */
@@ -14,7 +16,9 @@
         color: blue;
       } */
 
-      
+      .grandChild > p ~ p {
+        color: red;
+      }
     </style>
   </head>
   <body>
@@ -24,6 +28,8 @@
         <p>I am p2 tag</p>
         <div class="grandChild">
           <p>I am p3tag</p>
+          <p>I am p4tag</p>
+          <p>I am p5tag</p>
         </div>
       </div>
     </div>
