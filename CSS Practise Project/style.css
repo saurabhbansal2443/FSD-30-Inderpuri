@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+nav {
+  width: 100vw;
+  height: 23vh;
+}
+.navContent {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.searchContent {
+  width: 100%;
+  height: 50%;
+}
+
+.buttonContainer {
+  width: 30%;
+  height: 80%;
+}
+.textContainer {
+  width: 30%;
+  height: 80%;
+}
