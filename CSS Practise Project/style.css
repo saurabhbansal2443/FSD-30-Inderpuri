@@ -54,22 +54,26 @@ nav {
 
 .flipkartButton {
   width: 45%;
-  height: 80%;
+  height: 85%;
   border-radius: 8px;
   background-color: #ffe51e;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
 }
 
 .travelButton {
-  width: 45%;
-  height: 80%;
+  width: 43%;
+  height: 85%;
   border-radius: 8px;
   background-color: #f0f0f0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .searchBar {
