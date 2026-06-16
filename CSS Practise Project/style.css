@@ -28,10 +28,38 @@ nav {
 }
 
 .buttonContainer {
-  width: 30%;
-  height: 80%;
+  width: 25%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .textContainer {
-  width: 30%;
+  width: 23%;
   height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: 800;
+}
+
+.flipkartButton {
+  width: 45%;
+  height: 80%;
+  border-radius: 8px;
+  background-color: #ffe51e;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.travelButton {
+  width: 45%;
+  height: 80%;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
