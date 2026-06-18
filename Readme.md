@@ -6,3 +6,5 @@
 <br/>
 
 [Flexbox Froggy](https://flexboxfroggy.com/)
+
+[Feedback form](https://forms.gle/qmKHMRncuTr2mD249)
