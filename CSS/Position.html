@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        Static - bydefault property which does nothing 
+        Relative -- 1) Do not leave space , depends on original position
+        Absolute -- 1) leaves the space , depend on screen intially , but we can chnage the parent by giving the position relative to nearest parent 
+        fixed --- 1) leaves the space ,  depends on screen 
+        sticky -- 1) Donot leave the space , depends on parent 
+         */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .parent {
+        background-color: lightgray;
+        height: 500px;
+        width: 500px;
+        position: relative;
+      }
+      .child {
+        height: 100px;
+        width: 100px;
+      }
+      .red {
+        background-color: red;
+        /* position: static; */
+      }
+      .blue {
+        background-color: blue;
+        /* position: relative;
+        left: 500px; */
+        /* top: 100px; */
+      }
+      .green {
+        background-color: green;
+        /* position: absolute;
+        right: 100px;
+        top: 100px; */
+      }
+      .black {
+        background-color: black;
+        /* position: fixed;
+        right: 100px;
+        bottom: 100px; */
+      }
+      .yellow {
+        background-color: yellow;
+        position: sticky;
+        left: 100px;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child red"></div>
+      <div class="child blue"></div>
+      <div class="child yellow"></div>
+      <div class="child green"></div>
+      <div class="child black"></div>
+    </div>
+    <div style="height: 300vh; background-color: blue"></div>
+  </body>
+</html>
