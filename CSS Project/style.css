@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+}
+.border {
+  border: 1px solid red;
+}
+nav {
+  width: 100vw;
+  height: 10vh;
+  background-color: #eef9ff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav:hover {
+  background-color: #f7f7f7;
+}
+.logo {
+  width: 10%;
+  height: 60%;
+}
+.logo > img {
+  height: 100%;
+  width: 100%;
+}
+.option {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.optionBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.5rem;
+  font-weight: 100;
+}
+.loginBox {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sheetText {
+  width: 35%;
+  font-size: 0.5rem;
+  font-weight: 100;
+  text-decoration: underline;
+}
+.switchRoot {
+  height: 70%;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+}
+.loginText {
+  height: 70%;
+  width: 60%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   border-radius: 15px;
+}
