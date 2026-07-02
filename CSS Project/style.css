@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 100;
+  font-family: "Poppins", sans-serif;
 }
 .border {
   border: 1px solid red;
@@ -35,11 +34,12 @@ nav:hover {
   align-items: center;
 }
 .optionBox {
+  min-width: 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-size: 0.5rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 .loginBox {
   width: 20%;
@@ -51,7 +51,7 @@ nav:hover {
 .sheetText {
   width: 35%;
   font-size: 0.5rem;
-  font-weight: 100;
+  font-weight: 300;
   text-decoration: underline;
 }
 .switchRoot {
@@ -71,5 +71,21 @@ nav:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-   border-radius: 15px;
+  border-radius: 15px;
+}
+svg {
+  transform: scale(0.8);
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./backgroundImageIndigo.avif);
+}
+.HeadingText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-top: 2%;
 }
