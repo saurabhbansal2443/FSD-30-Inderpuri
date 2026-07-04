@@ -141,3 +141,36 @@ svg {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.flightOptionsAndCurrency {
+}
+.flightOptions {
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45%;
+  margin-top: 10px;
+}
+.flightOptions > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flightOptions > div > input {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+.flightOptions > div > .notselected {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #010099;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.flightOptions > div > label {
+  margin-right: 10px;
+}
