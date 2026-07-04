@@ -89,3 +89,55 @@ svg {
   font-size: 1.2rem;
   padding-top: 2%;
 }
+.ticketCheckerRoot {
+  position: relative;
+  height: 50%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ticketChecker {
+  height: 100%;
+  width: 100%;
+
+  margin-top: 2%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.options {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaf0f6;
+}
+.ticketBooking {
+  height: 85%;
+  width: 100%;
+}
+.options > .optionBox {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e0e3e5;
+}
+.dealsAndOffers {
+  background-color: #010099;
+  border-color: #010099;
+  color: white;
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  font-size: 0.5rem;
+  padding: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
+  transform: rotate(90deg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
