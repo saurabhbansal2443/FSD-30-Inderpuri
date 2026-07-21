@@ -61,8 +61,40 @@
 
 // A function can be stored in variable
 
-let greet = function () {
-  console.log("Hey Good morning");
+// let greet = function () {
+//   console.log("Hey Good morning");
+// };
+
+// console.log(greet());
+
+// functions -  function is a block {} of code to do a specific task
+
+// function factorial(n) {
+//   if (n == 0 || n == 1) {
+//     return 1;
+//   }
+//   let ans = 1;
+
+//   for (let i = 2; i <= n; i++) {
+//     ans = ans * i;
+//   }
+
+//   return ans;
+// }
+
+// let answer = factorial(5);
+
+// console.log(answer);
+
+// function greet() {
+//   console.log("Hello");
+//   return 2
+// }
+
+// console.log(greet())
+
+const greet = function () {
+  console.log("greet");
 };
 
-console.log(greet());
+greet()

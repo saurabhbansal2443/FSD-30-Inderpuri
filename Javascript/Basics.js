@@ -2,6 +2,10 @@
 // var ,let and const
 // DataTypes -- number , boolean , string , undefined , null , object
 
+var a = null;
+
+console.log(a);
+
 // let a = 10;
 
 // let a = 'saurabh'
@@ -26,6 +30,21 @@
 
 // Arrays
 
-let arr = ["saurabh", 24, false, [1, 2, 3, 4], { name: "JOHN" }];
-arr.push(99);
-console.log(arr);
+// let arr = ["saurabh", 24, false, [1, 2, 3, 4], { name: "JOHN" }];
+// arr.push(99);
+// console.log(arr);
+
+// Object -- (Key value pair )
+
+let obj = {
+  name: "saurabh",
+  age: 25,
+  name: "AJAY",
+  hobbies: ["cycling", 1, true, { name: "gdwij" }, [1, 2, 3, 4]],
+  address: {
+    state: "MP",
+    city: "bhopal",
+  },
+};
+
+console.log(obj.hobbies[3].name);

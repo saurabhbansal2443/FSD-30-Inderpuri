@@ -81,13 +81,60 @@
 
 // Let and const
 
+//  console.log(a);
+// let a = 10;
 // console.log(a);
-let a = 10;
+// abc();
+// console.log(a);
+// function abc() {
+//   console.log(a);
+//   a = 999;
+//   console.log(a);
+// }
+//
+
+// SCOPE --
+// var is function scope , let const are block scope
+// var let and const are function scope because function is also a block 
+// console.log(a);
+// var a = 10;
+// function abc() {
+//   let a = 99;
+//   console.log(a);
+// }
+// abc();
+// console.log(a);
+
+
 console.log(a);
-abc();
+console.log(b);
+var a = 100;
+var b = 99;
 console.log(a);
+console.log(b);
 function abc() {
   console.log(a);
-  a = 999;
+  var a = 199;
+  b = 199;
   console.log(a);
+  console.log(b);
+  function def() {
+    var x = 100;
+    console.log(x);
+    console.log(a);
+    console.log(b);
+    xyz();
+    function xyz() {
+      console.log(x);
+      console.log(a);
+      console.log(b);
+    }
+    b = 999;
+  }
+
+  def();
 }
+abc();
+// console.log(x);
+console.log(a);
+console.log(b);
