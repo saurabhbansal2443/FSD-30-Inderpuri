@@ -47,19 +47,6 @@
 // console.log(a);
 
 // console.log(a);
-// one();
-// var a = 10;
-// function one() {
-//     var a = 99;
-//     console.log(a);
-//     function two() {
-//         console.log(a);
-//         a = 199;
-//     }
-//     console.log(a);
-//     two();
-//     console.log(a);
-// }
 
 // console.log(a);
 
