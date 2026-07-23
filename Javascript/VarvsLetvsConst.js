@@ -95,7 +95,7 @@
 
 // SCOPE --
 // var is function scope , let const are block scope
-// var let and const are function scope because function is also a block 
+// var let and const are function scope because function is also a block
 // console.log(a);
 // var a = 10;
 // function abc() {
@@ -105,36 +105,58 @@
 // abc();
 // console.log(a);
 
+// console.log(a);
+// console.log(b);
+// var a = 100;
+// var b = 99;
+// console.log(a);
+// console.log(b);
+// function abc() {
+//   console.log(a);
+//   var a = 199;
+//   b = 199;
+//   console.log(a);
+//   console.log(b);
+//   function def() {
+//     var x = 100;
+//     console.log(x);
+//     console.log(a);
+//     console.log(b);
+//     xyz();
+//     function xyz() {
+//       console.log(x);
+//       console.log(a);
+//       console.log(b);
+//     }
+//     b = 999;
+//   }
 
-console.log(a);
-console.log(b);
-var a = 100;
-var b = 99;
-console.log(a);
-console.log(b);
-function abc() {
-  console.log(a);
-  var a = 199;
-  b = 199;
+//   def();
+// }
+// abc();
+// console.log(x);
+// console.log(a);
+// console.log(b);
+
+// Global Scope --  anything which is out of block or function is called Global Scope
+
+// var a = 10;
+
+// let b = 1000;
+
+// function greet() {
+//   console.log("abc");
+//   // function abc() {}
+// }
+
+// Block Scope
+
+{
+  var a = 10;
+  let b = 99;
   console.log(a);
   console.log(b);
-  function def() {
-    var x = 100;
-    console.log(x);
-    console.log(a);
-    console.log(b);
-    xyz();
-    function xyz() {
-      console.log(x);
-      console.log(a);
-      console.log(b);
-    }
-    b = 999;
-  }
-
-  def();
 }
-abc();
-// console.log(x);
+
 console.log(a);
 console.log(b);
