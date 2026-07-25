@@ -78,12 +78,27 @@ let arr = [1, 2, 3, 4];
 
 // console.log(ans);
 
-
-// Question 1  -- make a array of products which are in stock and have price greater than 50 
+// Question 1  -- make a array of products which are in stock and have price greater than 50
 
 const products = [
   { name: "Laptop", price: 1200, inStock: true },
   { name: "Mouse", price: 25, inStock: true },
   { name: "Keyboard", price: 75, inStock: false },
-  { name: "Monitor", price: 300, inStock: true }
+  { name: "Monitor", price: 300, inStock: true },
 ];
+
+const ans = products.filter(function (obj) {
+  // return  obj.inStock && obj.price > 50
+  const { price, inStock } = obj;
+  return inStock && price > 50;
+});
+
+console.log(ans);
+
+
+// Question 2  A database migration left user accounts with messy usernames. 
+// Convert an array of raw strings into standardized lowercase names prefixed with an @ symbol.
+
+const rawNames = ["  Alice ", "bOB", "  ChArLiE  "];
+
+// Expected Output: [ '@alice', '@bob', '@charlie' ]
