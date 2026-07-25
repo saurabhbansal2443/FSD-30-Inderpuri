@@ -72,8 +72,18 @@ let arr = [1, 2, 3, 4];
 
 // reduce --
 
-let ans = arr.reduce(function (acc, currEle) {
-  return acc + currEle;
-}, 10 );
+// let ans = arr.reduce(function (acc, currEle) {
+//   return acc + currEle;
+// }, 10 );
 
-console.log(ans);
+// console.log(ans);
+
+
+// Question 1  -- make a array of products which are in stock and have price greater than 50 
+
+const products = [
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Mouse", price: 25, inStock: true },
+  { name: "Keyboard", price: 75, inStock: false },
+  { name: "Monitor", price: 300, inStock: true }
+];
