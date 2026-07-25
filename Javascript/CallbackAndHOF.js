@@ -87,18 +87,41 @@ const products = [
   { name: "Monitor", price: 300, inStock: true },
 ];
 
-const ans = products.filter(function (obj) {
-  // return  obj.inStock && obj.price > 50
-  const { price, inStock } = obj;
-  return inStock && price > 50;
-});
+// const ans = products.filter(function (obj) {
+//   // return  obj.inStock && obj.price > 50
+//   const { price, inStock } = obj;
+//   return inStock && price > 50;
+// });
 
-console.log(ans);
+// console.log(ans);
 
-
-// Question 2  A database migration left user accounts with messy usernames. 
+// Question 2  A database migration left user accounts with messy usernames.
 // Convert an array of raw strings into standardized lowercase names prefixed with an @ symbol.
 
 const rawNames = ["  Alice ", "bOB", "  ChArLiE  "];
 
 // Expected Output: [ '@alice', '@bob', '@charlie' ]
+
+const ans = rawNames.map(function (name) {
+  return "@" + name.trim().toLowerCase();
+});
+
+console.log(ans);
+
+// Question 3 --  Calculate the final checkout price of a user's shopping cart, accounting for the quantity of each item
+
+const cart = [
+  { item: "Book", price: 15, quantity: 2 },
+  { item: "Pen", price: 2, quantity: 5 },
+  { item: "Bag", price: 40, quantity: 1 },
+];
+
+// question 4 -- Given a list of user profiles, extract a unique list of all hobbies listed across all users.
+
+// Expected Output: [ 'coding', 'cooking', 'gaming', 'reading' ]
+
+const users = [
+  { name: "Alex", hobbies: ["coding", "cooking"] },
+  { name: "Sam", hobbies: ["cooking", "gaming"] },
+  { name: "Jamie", hobbies: ["reading", "coding"] },
+];
