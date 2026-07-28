@@ -80,12 +80,12 @@ let arr = [1, 2, 3, 4];
 
 // Question 1  -- make a array of products which are in stock and have price greater than 50
 
-const products = [
-  { name: "Laptop", price: 1200, inStock: true },
-  { name: "Mouse", price: 25, inStock: true },
-  { name: "Keyboard", price: 75, inStock: false },
-  { name: "Monitor", price: 300, inStock: true },
-];
+// const products = [
+//   { name: "Laptop", price: 1200, inStock: true },
+//   { name: "Mouse", price: 25, inStock: true },
+//   { name: "Keyboard", price: 75, inStock: false },
+//   { name: "Monitor", price: 300, inStock: true },
+// ];
 
 // const ans = products.filter(function (obj) {
 //   // return  obj.inStock && obj.price > 50
@@ -144,6 +144,8 @@ const cart = [
 // console.log(ans);
 
 // Question 5
+
+// Falsy values of JS -- "" , undefined , null , 0 , false , NAN
 const books = [
   { title: "Dune", genre: "Sci-Fi" },
   { title: "The Hobbit", genre: "Fantasy" },
@@ -156,7 +158,19 @@ const books = [
 //   "Fantasy": ["The Hobbit"]
 // }
 
-// Question 6 --  Given an array of employee objects, use filter and map to get the full names of
+const ans = books.reduce(function (acc, currObj) {
+  let { genre, title } = currObj;
+  if (acc[genre]) {
+    acc[genre].push(title);
+  } else {
+    acc[genre] = [title];
+  }
+  return acc;
+}, {});
+
+console.log(ans);
+
+// Question 6 --  Given an array of employee objects,  to get the full names of
 // employees who work in the "Engineering" department and earn more than $90,000.
 
 const employees = [
