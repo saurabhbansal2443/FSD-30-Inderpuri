@@ -173,32 +173,38 @@ const cart = [
 // Question 6 --  Given an array of employee objects,  to get the full names of
 // employees who work in the "Engineering" department and earn more than $90,000.
 
-const employees = [
-  { name: "Alice", dept: "Engineering", salary: 95000 },
-  { name: "Bob", dept: "HR", salary: 50000 },
-  { name: "Charlie", dept: "Engineering", salary: 85000 },
-  { name: "David", dept: "Engineering", salary: 120000 },
-];
+// const employees = [
+//   { name: "Alice", dept: "Engineering", salary: 95000 },
+//   { name: "Bob", dept: "HR", salary: 50000 },
+//   { name: "Charlie", dept: "Engineering", salary: 85000 },
+//   { name: "David", dept: "Engineering", salary: 120000 },
+// ];
 
-const ans = employees
-  .filter(function (currObj) {
-    return currObj.dept == "Engineering" && currObj.salary > 90000;
-  })
-  .map(function (currObj) {
-    return currObj.name;
-  });
+// const ans = employees
+//   .filter(function (currObj) {
+//     return currObj.dept == "Engineering" && currObj.salary > 90000;
+//   })
+//   .map(function (currObj) {
+//     return currObj.name;
+//   });
 
-console.log(ans);
+// console.log(ans);
 
 // Expected Output: ["Alice", "David"]
 
-// Question 7  -- Use reduce to find the entire product object that has
+// Question 7  -- Use HOF  to find the entire product object that has
 //  the highest rating. If there is a tie, return the first one.
 const products = [
   { id: 101, name: "Keyboard", rating: 4.2 },
   { id: 102, name: "Camera", rating: 4.8 },
   { id: 103, name: "Headphones", rating: 4.5 },
 ];
+
+const ans = products.reduce(function (acc, currObj) {
+  return acc.rating > currObj.rating ? acc : currObj;
+});
+
+console.log(ans)
 
 //  Expected Output: { id: 102, name: "Camera", rating: 4.8 }
 
