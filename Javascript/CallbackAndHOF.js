@@ -126,19 +126,32 @@ const cart = [
 
 // Expected Output: [ 'coding', 'cooking', 'gaming', 'reading' ]
 
-const users = [
-  { name: "Alex", hobbies: ["coding", "cooking"] },
-  { name: "Sam", hobbies: ["cooking", "gaming"] },
-  { name: "Jamie", hobbies: ["reading", "coding"] },
-  { name: "Jamie", hobbies: ["reading", "cooking"] },
+// const users = [
+//   { name: "Alex", hobbies: ["coding", "cooking"] },
+//   { name: "Sam", hobbies: ["cooking", "gaming"] },
+//   { name: "Jamie", hobbies: ["reading", "coding"] },
+//   { name: "Jamie", hobbies: ["reading", "cooking"] },
+// ];
+
+// const myHashSet = new Set();
+
+// const ans = users.reduce(function (acc, currObj) {
+//   acc.add(currObj.hobbies[0]);
+//   acc.add(currObj.hobbies[1]);
+//   return acc;
+// }, myHashSet);
+
+// console.log(ans);
+
+// Question 5
+const books = [
+  { title: "Dune", genre: "Sci-Fi" },
+  { title: "The Hobbit", genre: "Fantasy" },
+  { title: "Neuromancer", genre: "Sci-Fi" },
 ];
 
-const myHashSet = new Set();
-
-const ans = users.reduce(function (acc, currObj) {
-  acc.add(currObj.hobbies[0]);
-  acc.add(currObj.hobbies[1]);
-  return acc;
-}, myHashSet);
-
-console.log(ans);
+// Expected Output
+//{
+//   "Sci-Fi": ["Dune", "Neuromancer"],
+//   "Fantasy": ["The Hobbit"]
+// }
