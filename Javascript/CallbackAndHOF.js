@@ -155,3 +155,56 @@ const books = [
 //   "Sci-Fi": ["Dune", "Neuromancer"],
 //   "Fantasy": ["The Hobbit"]
 // }
+
+// Question 6 --  Given an array of employee objects, use filter and map to get the full names of
+// employees who work in the "Engineering" department and earn more than $90,000.
+
+const employees = [
+  { name: "Alice", dept: "Engineering", salary: 95000 },
+  { name: "Bob", dept: "HR", salary: 50000 },
+  { name: "Charlie", dept: "Engineering", salary: 85000 },
+  { name: "David", dept: "Engineering", salary: 120000 },
+];
+
+// Expected Output: ["Alice", "David"]
+
+// Question 7  -- Use reduce to find the entire product object that has
+//  the highest rating. If there is a tie, return the first one.
+const products = [
+  { id: 101, name: "Keyboard", rating: 4.2 },
+  { id: 102, name: "Camera", rating: 4.8 },
+  { id: 103, name: "Headphones", rating: 4.5 },
+];
+
+//  Expected Output: { id: 102, name: "Camera", rating: 4.8 }
+
+// Question 8
+
+const usersList = [
+  { id: "u1", name: "Emma", role: "Admin" },
+  { id: "u2", name: "Liam", role: "User" },
+];
+
+// Expected Output
+// {
+//   "u1": { id: "u1", name: "Emma", role: "Admin" },
+//   "u2": { id: "u2", name: "Liam", role: "User" }
+// }
+
+// Question 9 -- find the average score of students who passed (scored 50 or above).
+
+const students = [
+  { name: "Tom", score: 45 },
+  { name: "Sara", score: 80 },
+  { name: "Ben", score: 90 },
+  { name: "Lucy", score: 30 },
+];
+
+// Expected Output: 85
+
+// Question 10 Given a string of text, split it into words, and use reduce to count how many times each word appears.
+// Convert all words to lowercase so the count is case-insensitive.
+
+//Input: "The cat chased the mouse and the mouse ran away"
+
+// Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
