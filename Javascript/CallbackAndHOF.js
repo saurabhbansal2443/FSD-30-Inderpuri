@@ -146,11 +146,11 @@ const cart = [
 // Question 5
 
 // Falsy values of JS -- "" , undefined , null , 0 , false , NAN
-const books = [
-  { title: "Dune", genre: "Sci-Fi" },
-  { title: "The Hobbit", genre: "Fantasy" },
-  { title: "Neuromancer", genre: "Sci-Fi" },
-];
+// const books = [
+//   { title: "Dune", genre: "Sci-Fi" },
+//   { title: "The Hobbit", genre: "Fantasy" },
+//   { title: "Neuromancer", genre: "Sci-Fi" },
+// ];
 
 // Expected Output
 //{
@@ -158,17 +158,17 @@ const books = [
 //   "Fantasy": ["The Hobbit"]
 // }
 
-const ans = books.reduce(function (acc, currObj) {
-  let { genre, title } = currObj;
-  if (acc[genre]) {
-    acc[genre].push(title);
-  } else {
-    acc[genre] = [title];
-  }
-  return acc;
-}, {});
+// const ans = books.reduce(function (acc, currObj) {
+//   let { genre, title } = currObj;
+//   if (acc[genre]) {
+//     acc[genre].push(title);
+//   } else {
+//     acc[genre] = [title];
+//   }
+//   return acc;
+// }, {});
 
-console.log(ans);
+// console.log(ans);
 
 // Question 6 --  Given an array of employee objects,  to get the full names of
 // employees who work in the "Engineering" department and earn more than $90,000.
@@ -179,6 +179,16 @@ const employees = [
   { name: "Charlie", dept: "Engineering", salary: 85000 },
   { name: "David", dept: "Engineering", salary: 120000 },
 ];
+
+const ans = employees
+  .filter(function (currObj) {
+    return currObj.dept == "Engineering" && currObj.salary > 90000;
+  })
+  .map(function (currObj) {
+    return currObj.name;
+  });
+
+console.log(ans);
 
 // Expected Output: ["Alice", "David"]
 
