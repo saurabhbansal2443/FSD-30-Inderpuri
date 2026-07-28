@@ -102,11 +102,11 @@ const rawNames = ["  Alice ", "bOB", "  ChArLiE  "];
 
 // Expected Output: [ '@alice', '@bob', '@charlie' ]
 
-const ans = rawNames.map(function (name) {
-  return "@" + name.trim().toLowerCase();
-});
+// const ans = rawNames.map(function (name) {
+//   return "@" + name.trim().toLowerCase();
+// });
 
-console.log(ans);
+// console.log(ans);
 
 // Question 3 --  Calculate the final checkout price of a user's shopping cart, accounting for the quantity of each item
 
@@ -116,6 +116,12 @@ const cart = [
   { item: "Bag", price: 40, quantity: 1 },
 ];
 
+// const ans = cart.reduce(function (acc, obj) {
+//   return acc + obj.quantity * obj.price;
+// }, 0);
+
+// console.log(ans);
+
 // question 4 -- Given a list of user profiles, extract a unique list of all hobbies listed across all users.
 
 // Expected Output: [ 'coding', 'cooking', 'gaming', 'reading' ]
@@ -124,4 +130,15 @@ const users = [
   { name: "Alex", hobbies: ["coding", "cooking"] },
   { name: "Sam", hobbies: ["cooking", "gaming"] },
   { name: "Jamie", hobbies: ["reading", "coding"] },
+  { name: "Jamie", hobbies: ["reading", "cooking"] },
 ];
+
+const myHashSet = new Set();
+
+const ans = users.reduce(function (acc, currObj) {
+  acc.add(currObj.hobbies[0]);
+  acc.add(currObj.hobbies[1]);
+  return acc;
+}, myHashSet);
+
+console.log(ans);
