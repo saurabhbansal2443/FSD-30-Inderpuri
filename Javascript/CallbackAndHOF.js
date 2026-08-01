@@ -221,6 +221,13 @@ const usersList = [
 //   "u2": { id: "u2", name: "Liam", role: "User" }
 // }
 
+// const ans = usersList.reduce(function (acc, currObj) {
+//   acc[currObj.id] = currObj;
+//   return acc;
+// }, {});
+
+// console.log(ans);
+
 // Question 9 -- find the average score of students who passed (scored 50 or above).
 
 const students = [
@@ -229,6 +236,17 @@ const students = [
   { name: "Ben", score: 90 },
   { name: "Lucy", score: 30 },
 ];
+
+const filteredArray = students.filter(function (currObj) {
+  return currObj.score > 50;
+});
+
+const averageScore =
+  filteredArray.reduce(function (acc, currObj) {
+    return acc + currObj.score;
+  }, 0) / filteredArray.length;
+
+console.log(averageScore);
 
 // Expected Output: 85
 
