@@ -194,17 +194,17 @@ const cart = [
 
 // Question 7  -- Use HOF  to find the entire product object that has
 //  the highest rating. If there is a tie, return the first one.
-const products = [
-  { id: 101, name: "Keyboard", rating: 4.2 },
-  { id: 102, name: "Camera", rating: 4.8 },
-  { id: 103, name: "Headphones", rating: 4.5 },
-];
+// const products = [
+//   { id: 101, name: "Keyboard", rating: 4.2 },
+//   { id: 102, name: "Camera", rating: 4.8 },
+//   { id: 103, name: "Headphones", rating: 4.5 },
+// ];
 
-const ans = products.reduce(function (acc, currObj) {
-  return acc.rating > currObj.rating ? acc : currObj;
-});
+// const ans = products.reduce(function (acc, currObj) {
+//   return acc.rating > currObj.rating ? acc : currObj;
+// });
 
-console.log(ans)
+// console.log(ans)
 
 //  Expected Output: { id: 102, name: "Camera", rating: 4.8 }
 
