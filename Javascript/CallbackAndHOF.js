@@ -253,6 +253,26 @@ console.log(averageScore);
 // Question 10 Given a string of text, split it into words, and use reduce to count how many times each word appears.
 // Convert all words to lowercase so the count is case-insensitive.
 
-//Input: "The cat chased the mouse and the mouse ran away"
-
+const array = [
+  "the",
+  "cat",
+  "chased",
+  "the",
+  "mouse",
+  "and",
+  "the",
+  "mouse",
+  "ran",
+  "away",
+];
 // Expected Output -- { the: 3, cat: 1, chased: 1, mouse: 2, and: 1, ran: 1, away: 1 }
+const ans = array.reduce(function (acc, currEle) {
+  if (acc[currEle]) {
+    acc[currEle] = acc[currEle] + 1;
+  } else {
+    acc[currEle] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(ans);
