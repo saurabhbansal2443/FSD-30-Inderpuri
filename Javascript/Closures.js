@@ -24,7 +24,6 @@
 
 function counter() {
   let count = 0;
-
   return {
     enter: function () {
       count++;
@@ -36,11 +35,9 @@ function counter() {
     },
   };
 }
-
 // let obj = counter();
 // let {enter , exit }  = obj ;
 let { enter, exit } = counter();
-
 enter();
 enter();
 exit();
