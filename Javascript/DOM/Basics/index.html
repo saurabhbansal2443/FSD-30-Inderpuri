@@ -23,8 +23,14 @@
 
     //
     const imageTag = document.querySelector("img");
-
-    console.dir(imageTag);
-    imageTag.src = "./image2.jpeg";
+    let flag = true;
+    imageTag.addEventListener("click", function () {
+      if (flag) {
+        imageTag.src = "./image2.jpeg";
+      } else {
+        imageTag.src = "./image1.jpeg";
+      }
+      flag = !flag;
+    });
   </script>
 </html>
