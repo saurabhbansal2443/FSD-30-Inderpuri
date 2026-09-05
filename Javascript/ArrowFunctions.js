@@ -22,3 +22,23 @@ let greet = () => {
 (function () {
   console.log("kufydfghefd");
 })();
+
+// Arrow Functions
+
+function greet() {
+  console.log("Hello");
+}
+
+function sum(a, b) {
+  return a + b;
+}
+
+let greet = () => {
+  console.log("Hello");
+};
+
+let sum = (a, b) => {
+  return a + b;
+};
+
+let sum2 = (a, b) => a + b;

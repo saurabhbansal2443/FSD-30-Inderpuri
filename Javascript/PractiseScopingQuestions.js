@@ -7,16 +7,16 @@
 // console.log(foo);
 
 // Question 2 
-// let x = 5;
-// function test() {
-//   console.log(x);
-//   if (true) {
-//     let x = 20;
-//     console.log(x);
-//   }
-//   console.log(x);
-// }
-// test();
+let x = 5;
+function test() {
+  console.log(x);
+  if (true) {
+    let x = 20;
+    console.log(x);
+  }
+  console.log(x);
+}
+test();
 
 // Question 3 
 // let b = 100;
