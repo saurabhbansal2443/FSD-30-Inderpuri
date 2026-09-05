@@ -10,16 +10,27 @@
     <a href="https://github.com/lydiahallie/javascript-questions">
       JS Questions Link</a
     >
+    <img width="700" height="700" src="./image1.jpeg" alt="">
   </body>
   <script>
     // console.dir(document);
     // const ptag = document.querySelector("p");
     // ptag.innerHTML = "Changed through JS"
 
-    const anchorTag = document.querySelector("a");
+    // const anchorTag = document.querySelector("a");
+    // console.dir(anchorTag);
 
-    anchorTag.href = "https://transform.tools/svg-to-react-native"
+    // First Way
+    // anchorTag.href = "https://transform.tools/svg-to-react-native"
+    // Second Way
+    // anchorTag.setAttribute("href", "https://transform.tools/svg-to-react-native")
 
-    console.dir(anchorTag);
+    // anchorTag.style.textDecoration = "none";
+    // anchorTag.style.color = "red";
+
+    const imgTag = document.querySelector("img"); 
+
+    imgTag.src = "./image2.jpeg"
+    imgTag.height = 700
   </script>
 </html>
