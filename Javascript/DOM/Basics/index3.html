@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./image1.jpeg" />
+  </body>
+  <script>
+    const imageTag = document.querySelector("img");
+
+    // console.dir(imageTag);
+    let flag = true;    
+    imageTag.addEventListener("click", function () {
+      if (flag == true) {
+        imageTag.src = "./image2.jpeg";
+      } else {
+        imageTag.src = "./image1.jpeg";
+      }
+      flag = !flag;
+    });
+  </script>
+</html>
