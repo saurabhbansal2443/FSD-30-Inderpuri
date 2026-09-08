@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .square {
+        height: 100px;
+        width: 100px;
+        border: 1px solid red;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <button>Add</button>
+    <div class="boxContainer">
+      <div class="square"></div>
+    </div>
+  </body>
+  <script>
+    const inputTag = document.querySelector("input");
+    const buttonTag = document.querySelector("button");
+
+    //  console.dir(inputTag);
+    // console.dir(buttonTag);
+
+    buttonTag.addEventListener("click", function () {
+      console.log("Button clicked");
+    });
+  </script>
+</html>
