@@ -16,19 +16,43 @@
   <body>
     <input type="text" />
     <button>Add</button>
+    <input id="color" type="color" />
+    <select name="" id="">
+      <option value="square">Square</option>
+      <option value="circle">Circle</option>
+    </select>
     <div class="boxContainer">
-      <div class="square"></div>
+      <!-- <div class="square"></div>
+      <div class="square"></div> -->
     </div>
   </body>
   <script>
     const inputTag = document.querySelector("input");
     const buttonTag = document.querySelector("button");
+    const container = document.querySelector(".boxContainer");
+    const colorInputTag = document.querySelector("#color");
 
+    // console.log(colorInputTag)
     //  console.dir(inputTag);
     // console.dir(buttonTag);
+    // console.dir(container);
 
     buttonTag.addEventListener("click", function () {
-      console.log("Button clicked");
+      container.innerHTML = "";
+      // console.dir(colorInputTag)
+      // console.log(inputTag)
+
+      const numberOfBoxes = inputTag.value;
+      const boxColor = colorInputTag.value;
+
+      // console.log(numberOfBoxes);
+      for (let i = 1; i <= numberOfBoxes; i++) {
+        const boxEle = document.createElement("div");
+        boxEle.classList.add("square");
+        boxEle.style.backgroundColor = boxColor;
+        container.appendChild(boxEle);
+        // console.log(boxEle);
+      }
     });
   </script>
 </html>
