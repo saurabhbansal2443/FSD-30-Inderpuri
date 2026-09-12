@@ -8,22 +8,30 @@
       .square {
         height: 100px;
         width: 100px;
-        border: 1px solid red;
+
         margin: 10px;
+      }
+      .circle {
+        height: 100px;
+        width: 100px;
+
+        margin: 10px;
+        border-radius: 50%;
       }
     </style>
   </head>
   <body>
     <input type="text" />
-    <button>Add</button>
+
     <input id="color" type="color" />
-    <select name="" id="">
+    <select name="" id="shape">
       <option value="square">Square</option>
       <option value="circle">Circle</option>
     </select>
+    <button>Add</button>
     <div class="boxContainer">
       <!-- <div class="square"></div>
-      <div class="square"></div> -->
+      <div class="circle"></div> -->
     </div>
   </body>
   <script>
@@ -31,6 +39,7 @@
     const buttonTag = document.querySelector("button");
     const container = document.querySelector(".boxContainer");
     const colorInputTag = document.querySelector("#color");
+    const shapeInput = document.getElementById("shape");
 
     // console.log(colorInputTag)
     //  console.dir(inputTag);
@@ -44,11 +53,14 @@
 
       const numberOfBoxes = inputTag.value;
       const boxColor = colorInputTag.value;
+      const shape = shapeInput.value;
+
+      // console.log(shape);
 
       // console.log(numberOfBoxes);
       for (let i = 1; i <= numberOfBoxes; i++) {
         const boxEle = document.createElement("div");
-        boxEle.classList.add("square");
+        boxEle.classList.add(shape);
         boxEle.style.backgroundColor = boxColor;
         container.appendChild(boxEle);
         // console.log(boxEle);
