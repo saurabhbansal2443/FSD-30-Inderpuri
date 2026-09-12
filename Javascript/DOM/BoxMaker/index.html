@@ -8,15 +8,21 @@
       .square {
         height: 100px;
         width: 100px;
-
         margin: 10px;
       }
       .circle {
         height: 100px;
         width: 100px;
-
         margin: 10px;
         border-radius: 50%;
+      }
+      .boxContainer {
+        min-height: 100vh;
+        width: 90vw;
+        background-color: lightgrey;
+        margin-top: 10px;
+        padding: 10px;
+        display: flex;
       }
     </style>
   </head>
@@ -29,6 +35,11 @@
       <option value="circle">Circle</option>
     </select>
     <button>Add</button>
+    <button id="reset">Reset</button>
+    <select name="" id="direction">
+      <option value="row">Row</option>
+      <option value="column">Column</option>
+    </select>
     <div class="boxContainer">
       <!-- <div class="square"></div>
       <div class="circle"></div> -->
@@ -40,6 +51,17 @@
     const container = document.querySelector(".boxContainer");
     const colorInputTag = document.querySelector("#color");
     const shapeInput = document.getElementById("shape");
+    const resetButton = document.getElementById("reset");
+    const directionInput = document.getElementById("direction");
+
+    directionInput.addEventListener("change", function () {
+      const boxDirection = directionInput.value;
+      console.log(container.style, boxDirection);
+      container.style.flexDirection = boxDirection;
+    });
+    resetButton.addEventListener("click", function () {
+      container.innerHTML = "";
+    });
 
     // console.log(colorInputTag)
     //  console.dir(inputTag);
@@ -50,13 +72,10 @@
       container.innerHTML = "";
       // console.dir(colorInputTag)
       // console.log(inputTag)
-
       const numberOfBoxes = inputTag.value;
       const boxColor = colorInputTag.value;
       const shape = shapeInput.value;
-
       // console.log(shape);
-
       // console.log(numberOfBoxes);
       for (let i = 1; i <= numberOfBoxes; i++) {
         const boxEle = document.createElement("div");
