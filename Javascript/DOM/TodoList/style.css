@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.taskInputs {
+  width: 100vw;
+  height: 10vh;
+  background-color: #315b8c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inputTag {
+  height: 45%;
+  width: 30%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#addBtn {
+  height: 45%;
+  width: 5%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  background-color: #f2765e;
+  color: white;
+}
+.taskContainer {
+  height: 90vh;
+  width: 100vw;
+  background-color: #f5ebdd;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.task {
+  margin: 10px;
+  height: 8%;
+  width: 50%;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #315b8c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
