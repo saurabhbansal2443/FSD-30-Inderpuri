@@ -5,7 +5,17 @@ const taskContainerEle = document.querySelector(".taskContainer");
 // console.log(inputEle);
 // console.log(addBtnEle);
 
-addBtnEle.addEventListener("click", function () {
+inputEle.addEventListener("keydown", function (event) {
+  let key = event.key;
+
+  if (key == "Enter") {
+    addTask();
+  }
+});
+
+addBtnEle.addEventListener("click", addTask);
+
+function addTask() {
   let task = inputEle.value.trim();
   inputEle.value = "";
   if (task.length == 0) {
@@ -37,4 +47,4 @@ addBtnEle.addEventListener("click", function () {
 
   taskContainerEle.appendChild(taskEle);
   //   console.log(taskEle);
-});
+}
