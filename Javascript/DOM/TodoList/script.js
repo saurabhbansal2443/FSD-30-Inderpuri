@@ -80,6 +80,7 @@ function addTask() {
       taskCompleteBtn.innerHTML = "Complete";
       taskText.style.textDecoration = "none";
       taskEle.style.backgroundColor = "#315b8c";
+      taskEle.style.order = -1;
     } else {
       taskCompleteBtn.classList.remove("completeBtn");
       taskCompleteBtn.classList.add("incompleteBtn");
@@ -87,6 +88,7 @@ function addTask() {
       taskText.style.textDecoration = "line-through";
       taskText.style.textDecorationColor = "red";
       taskEle.style.backgroundColor = "#aac9ec";
+      taskEle.style.order = 1;
     }
 
     isTaskComplete = !isTaskComplete;
