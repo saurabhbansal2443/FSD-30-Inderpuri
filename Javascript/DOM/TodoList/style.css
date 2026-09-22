@@ -28,8 +28,40 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f2765e;
+  color: white;
+}
+
+.completeBtn {
+  height: 45%;
+  padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 198, 41);
+  color: white;
+}
+
+.incompleteBtn {
+  height: 45%;
+  padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(244, 104, 89);
   color: white;
 }
 .taskContainer {
@@ -56,5 +88,13 @@
   justify-content: space-between;
   align-items: center;
   padding-left: 3%;
-  padding-right: 3%;
+  padding-right: 1.5%;
+}
+
+.icons {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
