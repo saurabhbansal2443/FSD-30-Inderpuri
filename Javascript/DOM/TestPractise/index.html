@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .task {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="input" type="text" />
+    <button id="btn">Add</button>
+    <div class="taskContainer">
+      <div class="task">
+        <p>Task text</p>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let inputTag = document.getElementById("input");
+    let addBtn = document.getElementById("btn");
+    let taskContainer = document.querySelector(".taskContainer");
+
+    // console.log(inputTag, addBtn, taskContainer);
+    addBtn.addEventListener("click", addTask);
+    inputTag.addEventListener("keydown", function (event) {
+      let key = event.key;
+      if (key == "Enter") {
+        addTask();
+      }
+    });
+
+    function addTask() {
+      let task = inputTag.value.trim();
+      inputTag.value = "";
+
+      if (task.length == 0) {
+        alert("Task is empty");
+        return;
+      }
+      //   console.log(task);
+
+      let taskEle = document.createElement("div");
+      taskEle.classList.add("task");
+      taskEle.innerHTML = `
+       <p id="text">${task}</p>
+        <button id="edit">Edit</button>
+        <button id="delete">Delete</button>`;
+
+      const deleteBtn = taskEle.querySelector("#delete");
+      const editBtn = taskEle.querySelector("#edit");
+      const taskText = taskEle.querySelector("#text");
+
+      deleteBtn.addEventListener("click", function () {
+        taskContainer.removeChild(taskEle);
+      });
+      let isTextEditable = false;
+      editBtn.addEventListener("click", function () {
+        if (isTextEditable) {
+          taskText.setAttribute("contentEditable", "false");
+          editBtn.style.backgroundColor = "white";
+        } else {
+          taskText.setAttribute("contentEditable", "true");
+          editBtn.style.backgroundColor = "red";
+        }
+        isTextEditable = !isTextEditable;
+      });
+      //   console.log(taskEle);
+      taskContainer.appendChild(taskEle);
+    }
+  </script>
+</html>

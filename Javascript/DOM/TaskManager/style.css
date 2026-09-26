@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #c0e1d2;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.priotityColors {
+  height: 60%;
+  width: 30%;
+  background-color: #f6f4e8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+.color {
+  height: 60%;
+  width: 20%;
+  border-radius: 10px;
+}
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+.options {
+  height: 60%;
+  width: 10%;
+  background-color: #f6f4e8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+.taskContainer {
+  background-color: #f6f4e8;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+.ticket {
+  margin: 10px;
+  height: 35vh;
+  width: 15%;
+  border: 0.1px solid rgb(164, 162, 162);
+  background-color: #e5eee4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.taskColor {
+  height: 10%;
+  width: 100%;
+}
+.ticketTaskContainer {
+  /* background-color: blue; */
+  padding: 5px;
+  position: relative;
+  height: 90%;
+  width: 100%;
+}
+.lockContainer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.taskAdder {
+  height: 40vh;
+  width: 35vw;
+  background-color: #c0e1d2;
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+}
+.taskText {
+  resize: none;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 80%;
+  background-color: white;
+
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.priotityColors2 {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.color2 {
+  height: 15%;
+  width: 80%;
+  border-radius: 10%;
+}
+
+.border {
+  border: 3px solid white;
+}
+
+#pTag {
+  word-wrap: break-word;
+}
+
+.hide {
+  display: none;
+}
