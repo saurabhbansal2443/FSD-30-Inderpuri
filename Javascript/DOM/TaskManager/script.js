@@ -9,7 +9,7 @@ const deleteBtn = document.getElementById("delete");
 // console.log(allColorsOfTaskAdder);
 
 let taskArray = [];
-// [{task : "Hello from" , color : "red"} ]
+// [{task : "Hello from" , color : "red" , id : 56789} ]
 
 let selectedColor = "red";
 
@@ -37,6 +37,7 @@ taskAdderTextArea.addEventListener("keydown", function (event) {
   let taskObj = {
     task: task,
     color: selectedColor,
+    id: Date.now(),
   };
   taskArray.push(taskObj);
   ticketMaker(taskArray);
@@ -63,7 +64,7 @@ priotityColors2.addEventListener("click", function (event) {
 function ticketMaker(tArray) {
   ticketContainer.innerHTML = "";
   tArray.forEach(function (taskObj) {
-    let { color, task } = taskObj;
+    let { color, task, id } = taskObj;
     const ticketEle = document.createElement("div");
     ticketEle.classList.add("ticket");
 
@@ -87,7 +88,13 @@ function ticketMaker(tArray) {
 
     ticketEle.addEventListener("dblclick", function () {
       if (isDeleteActive == false) return;
+      // UI layer
       ticketContainer.removeChild(ticketEle);
+      // Data Layer
+      let filteredTask = taskArray.filter(function (taskObj) {
+        return taskObj.id != id;
+      });
+      taskArray = filteredTask;
     });
 
     ticketContainer.appendChild(ticketEle);
