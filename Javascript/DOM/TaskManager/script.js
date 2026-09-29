@@ -49,6 +49,7 @@ priotityColors2.addEventListener("click", function (event) {
 });
 
 function ticketMaker(tArray) {
+  ticketContainer.innerHTML = "";
   tArray.forEach(function (taskObj) {
     let { color, task } = taskObj;
     const ticketEle = document.createElement("div");
