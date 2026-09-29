@@ -4,6 +4,7 @@ const taskAdderTextArea = document.getElementById("textarea");
 const priotityColors2 = document.querySelector(".priotityColors2");
 const allColorsOfTaskAdder = document.querySelectorAll(".color2");
 const ticketContainer = document.querySelector(".taskContainer");
+const deleteBtn = document.getElementById("delete");
 
 // console.log(allColorsOfTaskAdder);
 
@@ -13,6 +14,17 @@ let taskArray = [];
 let selectedColor = "red";
 
 addBtn.addEventListener("click", hideTicketAdder);
+
+let isDeleteActive = false;
+
+deleteBtn.addEventListener("click", function () {
+  isDeleteActive = !isDeleteActive;
+  if (isDeleteActive) {
+    deleteBtn.setAttribute("fill", "red");
+  } else {
+    deleteBtn.setAttribute("fill", "black");
+  }
+});
 
 taskAdderTextArea.addEventListener("keydown", function (event) {
   const key = event.key;
@@ -72,6 +84,11 @@ function ticketMaker(tArray) {
             </svg>
           </div>
         </div>`;
+
+    ticketEle.addEventListener("dblclick", function () {
+      if (isDeleteActive == false) return;
+      ticketContainer.removeChild(ticketEle);
+    });
 
     ticketContainer.appendChild(ticketEle);
   });
