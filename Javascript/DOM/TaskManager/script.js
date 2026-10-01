@@ -8,6 +8,8 @@ const deleteBtn = document.getElementById("delete");
 
 // console.log(allColorsOfTaskAdder);
 
+let allColors = ["red", "blue", "green", "orange"];
+
 let taskArray = [];
 // [{task : "Hello from" , color : "red" , id : 56789} ]
 
@@ -85,6 +87,27 @@ function ticketMaker(tArray) {
             </svg>
           </div>
         </div>`;
+
+    const taskColorEle = ticketEle.querySelector(".taskColor");
+
+    taskColorEle.addEventListener("click", function () {
+      let currentColor = taskObj.color;
+
+      let currentColorIndex = allColors.indexOf(currentColor);
+
+      let nextColorIndex = 0;
+
+      if (currentColorIndex != allColors.length - 1) {
+        nextColorIndex = currentColorIndex + 1;
+      }
+      let nextColor = allColors[nextColorIndex];
+
+      // UI Layer
+      taskColorEle.classList.remove(currentColor);
+      taskColorEle.classList.add(nextColor);
+      // Data Layer
+      taskObj.color = nextColor;
+    });
 
     ticketEle.addEventListener("dblclick", function () {
       if (isDeleteActive == false) return;
