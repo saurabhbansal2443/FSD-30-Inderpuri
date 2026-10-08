@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let bread = "bread";
+
+    function breadCut(raw) {
+      let breadCut = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (raw) {
+            resolve("Passed in resolve");
+          } else {
+            reject("passed in reject");
+          }
+        }, 2000);
+      });
+      return breadCut;
+    }
+
+    // Syntax one
+    // let breadPromise = breadCut();
+    // breadPromise.then()
+
+    // Syntax Two
+    console.log("Start");
+    breadCut()
+      .then(function (data) {
+        console.log("Data in then ->>", data);
+      })
+      .catch(function (data) {
+        console.log("Data in catch ->>", data);
+      });
+    console.log("End");
+  </script>
+</html>
