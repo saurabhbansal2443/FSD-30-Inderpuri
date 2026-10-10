@@ -7,19 +7,46 @@
   </head>
   <body></body>
   <script>
+    // Promise -- Promise is object, which is used to do asynchronous task,
+    // //it has three states [Pending , fullfilled , reject ]
+
     let bread = "bread";
 
     function breadCut(raw) {
       let breadCut = new Promise(function (resolve, reject) {
         setTimeout(function () {
           if (raw) {
-            resolve("Passed in resolve");
+            resolve("Beadcut Done");
           } else {
-            reject("passed in reject");
+            reject("Reject in bread cut");
           }
         }, 2000);
       });
       return breadCut;
+    }
+
+    function AddStuffings(bread) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (bread) {
+            resolve("Stuffings done ");
+          } else {
+            reject("Reject in addStuffings");
+          }
+        }, 2000);
+      });
+    }
+
+    function BakeBread(bread) {
+      return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          if (bread) {
+            resolve("Sandwich ban gaya aake khale ");
+          } else {
+            reject("Reject in bakeBread");
+          }
+        }, 2000);
+      });
     }
 
     // Syntax one
@@ -27,14 +54,37 @@
     // breadPromise.then()
 
     // Syntax Two
-    console.log("Start");
-    breadCut()
-      .then(function (data) {
-        console.log("Data in then ->>", data);
-      })
-      .catch(function (data) {
-        console.log("Data in catch ->>", data);
-      });
-    console.log("End");
+    // console.log("Start");
+    // breadCut("raw")
+    //   .then(function (bread) {
+    //     console.log(bread);
+    //     return AddStuffings();
+    //   })
+    //   .then(function (stuffedBread) {
+    //     console.log(stuffedBread);
+    //     return BakeBread(stuffedBread);
+    //   })
+    //   .then(function (sandwich) {
+    //     console.log(sandwich);
+    //   })
+    //   .catch(function (data) {
+    //     console.log("Data in catch ->>", data);
+    //   });
+    // console.log("End");
+
+   async function makeSandwich() {
+      try {
+        let cuttedBread = await breadCut("bread");
+        console.log(cuttedBread);
+        let stuffedBread = await AddStuffings();
+        console.log(stuffedBread);
+        let sandwich = await BakeBread(stuffedBread);
+        console.log(sandwich);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    makeSandwich();
   </script>
 </html>
