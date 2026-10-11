@@ -284,5 +284,11 @@
       </section>
     </div>
   </body>
-  
+  <script>
+   
+
+    function getApi(city){
+      return `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    }
+  </script>
 </html>
