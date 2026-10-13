@@ -289,7 +289,9 @@
     let inputEle = document.getElementById("cityInput");
     let searchBtnEle = document.getElementById("searchBtn");
     let mainWeather = document.querySelector(".main-weather");
-    let details = document.querySelector(".details"); 
+    let details = document.querySelector(".details");
+
+    getLocation();
 
     searchBtnEle.addEventListener("click", function () {
       let city = inputEle.value.trim();
@@ -301,8 +303,8 @@
 
     // .json() vs JSON.parse()
 
-    async function getData(city) {
-      let api = getApi(city);
+    async function getData(location) {
+      let api = getApi(location);
       let apiData = await fetch(api);
       let data = await apiData.json();
       console.log(data);
@@ -355,8 +357,22 @@
         </div>`;
     }
 
-    function getApi(city) {
-      return `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error);
+      }
+    }
+    function success(position) {
+      let location = `${position.coords.latitude},${position.coords.longitude}`;
+      getData(location);
+    }
+
+    function error() {
+      alert("Sorry, no position available.");
+    }
+
+    function getApi(location) {
+      return `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
     }
   </script>
 </html>
