@@ -288,6 +288,8 @@
     let apiKey = "ed8c37818a944c29adf40311232510";
     let inputEle = document.getElementById("cityInput");
     let searchBtnEle = document.getElementById("searchBtn");
+    let mainWeather = document.querySelector(".main-weather");
+    let details = document.querySelector(".details"); 
 
     searchBtnEle.addEventListener("click", function () {
       let city = inputEle.value.trim();
@@ -306,10 +308,51 @@
       console.log(data);
       updateUI(data);
     }
-
     function updateUI(data) {
-      const {location,current } = data ; 
-      const {name:city , region : state  , country} = location
+      let { location, current } = data;
+      let { name: city, country, localtime: timeAndDate } = location;
+      let { temp_c, wind_kph, humidity, feelslike_c, uv, condition } = current;
+      let { text: weatherStatus, icon: image } = condition;
+
+      mainWeather.innerHTML = `<div class="weather-info">
+          <div class="location">📍 ${city}, ${country}</div>
+
+          <div class="date">${timeAndDate}</div>
+
+          <div class="temperature">${temp_c}°</div>
+
+          <div class="condition">${weatherStatus}</div>
+        </div>
+
+        <img
+          class="weather-icon"
+          src="${image}"
+          alt=""
+        />`;
+
+      details.innerHTML = `<div class="detail-card">
+          <div class="detail-icon">💧</div>
+          <div class="detail-title">Humidity</div>
+          <div class="detail-value">${humidity}%</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">💨</div>
+          <div class="detail-title">Wind</div>
+          <div class="detail-value">${wind_kph} km/h</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">🌡️</div>
+          <div class="detail-title">Feels Like</div>
+          <div class="detail-value">${feelslike_c}°</div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">☀️</div>
+          <div class="detail-title">UV Index</div>
+          <div class="detail-value">${uv}</div>
+        </div>`;
     }
 
     function getApi(city) {
