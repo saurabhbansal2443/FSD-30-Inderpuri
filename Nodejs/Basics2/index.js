@@ -6,7 +6,7 @@
 import figlet from "figlet";
 
 async function doStuff() {
-  const text = await figlet.text("S");
+  const text = await figlet.text("HEllo World");
   console.log(text);
 }
 
