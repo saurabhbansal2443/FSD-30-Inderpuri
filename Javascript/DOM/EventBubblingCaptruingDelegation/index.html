@@ -43,7 +43,7 @@
     child.addEventListener("click", function (event) {
       console.log("child");
       child.style.backgroundColor = "red";
-      // event.stopPropagation();
+      event.stopPropagation();
     }, true );
   </script>
 </html>
