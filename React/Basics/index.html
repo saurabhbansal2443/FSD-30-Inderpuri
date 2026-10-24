@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script>
+    // let rootEle = document.getElementById("root");
+
+    // let pEle1 = document.createElement("p");
+
+    // pEle.innerHTML = "P tag added through JS ";
+
+    // rootEle.appendChild(pEle);
+    // console.log(React);
+    // console.log(ReactDOM);
+
+    // <div class="parent">
+    //   <p>I am p1 tag</p>
+    //   <div class="child">
+    //     <p>I am p2 tag</p>
+    //   </div>
+    // </div>
+
+    const pEle = React.createElement("div", { class: "parent" }, [
+      React.createElement("p", {}, "I am p1tag"),
+      React.createElement(
+        "div",
+        { class: "child" },
+        React.createElement("p", {}, "I am p2tag"),
+      ),
+    ]);
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(pEle);
+  </script>
+</html>
