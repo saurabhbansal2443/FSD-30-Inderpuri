@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 
 const App = () => {
+  const [task, setTask] = useState("");
+  const [taskArray, setTaskArray] = useState([]);
+  const handleInputChange = (event) => {
+    // console.log(event.target.value);
+    setTask(event.target.value);
+  };
+  const handleAddBtnClick = () => {
+    if (task.trim().length == 0) return;
+    let taskObj = { task: task, id: Date.now() };
+    setTaskArray([...taskArray, taskObj]);
+    setTask("");
+  };
   return (
     <div style={style.root}>
+      {console.log(taskArray)}
       <div style={style.control}>
-        <input style={style.input} type="text" />
-        <button style={style.addBtn}>Add</button>
+        <input
+          value={task}
+          onChange={handleInputChange}
+          style={style.input}
+          type="text"
+        />
+        <button onClick={handleAddBtnClick} style={style.addBtn}>
+          Add
+        </button>
       </div>
       <div style={style.taskContainer}>
-        <div style={style.task}>
-          <p>Task</p>
-          <button style={style.addBtn}>Delete</button>
-        </div>
+        {taskArray.map(function (taskObj) {
+          return (
+            <div key={taskObj.id} style={style.task}>
+              <p>{taskObj.task}</p>
+              <button style={style.addBtn}>Delete</button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
