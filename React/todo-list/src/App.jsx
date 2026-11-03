@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 const App = () => {
   const [task, setTask] = useState("");
-  const [taskArray, setTaskArray] = useState([]);
+  const [taskArray, setTaskArray] = useState(() => {
+    if (localStorage.getItem("TaskArray")) {
+      return JSON.parse(localStorage.getItem("TaskArray"));
+    } else {
+      return [];
+    }
+  });
   const handleInputChange = (event) => {
     // console.log(event.target.value);
     setTask(event.target.value);
