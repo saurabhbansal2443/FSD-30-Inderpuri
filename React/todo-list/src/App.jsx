@@ -11,6 +11,7 @@ const App = () => {
     if (task.trim().length == 0) return;
     let taskObj = { task: task, id: Date.now() };
     setTaskArray([...taskArray, taskObj]);
+    updateLocalStorage([...taskArray, taskObj]);
     setTask("");
   };
   const handleDelete = (id) => {
@@ -18,7 +19,9 @@ const App = () => {
       return taskObj.id != id;
     });
     setTaskArray(filteredTaskArray);
+    updateLocalStorage(filteredTaskArray);
   };
+
   return (
     <div style={style.root}>
       {console.log(taskArray)}
@@ -53,6 +56,10 @@ const App = () => {
     </div>
   );
 };
+
+function updateLocalStorage(array) {
+  localStorage.setItem("TaskArray", JSON.stringify(array));
+}
 
 export default App;
 
