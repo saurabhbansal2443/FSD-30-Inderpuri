@@ -13,6 +13,12 @@ const App = () => {
     setTaskArray([...taskArray, taskObj]);
     setTask("");
   };
+  const handleDelete = (id) => {
+    const filteredTaskArray = taskArray.filter((taskObj) => {
+      return taskObj.id != id;
+    });
+    setTaskArray(filteredTaskArray);
+  };
   return (
     <div style={style.root}>
       {console.log(taskArray)}
@@ -32,7 +38,14 @@ const App = () => {
           return (
             <div key={taskObj.id} style={style.task}>
               <p>{taskObj.task}</p>
-              <button style={style.addBtn}>Delete</button>
+              <button
+                onClick={() => {
+                  handleDelete(taskObj.id);
+                }}
+                style={style.addBtn}
+              >
+                Delete
+              </button>
             </div>
           );
         })}
