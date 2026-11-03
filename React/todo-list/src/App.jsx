@@ -28,12 +28,17 @@ const App = () => {
     updateLocalStorage(filteredTaskArray);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key !== "Enter") return;
+    handleAddBtnClick();
+  };
+
   return (
     <div style={style.root}>
-      {console.log(taskArray)}
       <div style={style.control}>
         <input
           value={task}
+          onKeyDown={handleKeyDown}
           onChange={handleInputChange}
           style={style.input}
           type="text"
