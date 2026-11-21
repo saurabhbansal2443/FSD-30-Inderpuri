@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const App = () => {
   const [task, setTask] = useState("");
@@ -27,7 +27,6 @@ const App = () => {
     setTaskArray(filteredTaskArray);
     updateLocalStorage(filteredTaskArray);
   };
-
   const handleKeyDown = (event) => {
     if (event.key !== "Enter") return;
     handleAddBtnClick();
