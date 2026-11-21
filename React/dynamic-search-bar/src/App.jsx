@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const App = () => {
+  const [query, setQuery] = useState("");
+
+  function handleInputChange(event) {
+    setQuery(event.target.value);
+  }
   return (
     <div style={style.root}>
       <div style={style.searchWrapper}>
@@ -10,6 +15,7 @@ const App = () => {
             style={style.input}
             type="text"
             placeholder="Search products..."
+            onChange={handleInputChange}
           />
         </div>
 
