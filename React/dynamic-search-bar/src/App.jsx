@@ -1,11 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = () => {
   const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
 
   function handleInputChange(event) {
     setQuery(event.target.value);
   }
+
+  async function getData() {
+    let apiData = await fetch(getApi(query));
+    let data = await apiData.json();
+    setData(data.products);
+  }
+
+  useEffect(
+    function () {
+      console.log("Effect runned");
+      getData();
+    },
+    [query],
+  );
+
   return (
     <div style={style.root}>
       <div style={style.searchWrapper}>
@@ -23,7 +39,7 @@ const App = () => {
           <p style={style.suggestionHeading}>SUGGESTIONS</p>
 
           <div style={style.suggestion}>
-            <img style={style.productIcon} src="" />
+            {/* <img style={style.productIcon} src="" /> */}
             <p style={style.suggestionText}>iPhone</p>
             <span style={style.suggestionArrow}>↗</span>
           </div>
@@ -32,6 +48,10 @@ const App = () => {
     </div>
   );
 };
+
+function getApi(query) {
+  return `https://dummyjson.com/products/search?q=${query}`;
+}
 
 export default App;
 
