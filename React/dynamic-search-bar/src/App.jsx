@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
+
+  const timerId = useRef(null);
 
   function handleInputChange(event) {
     setQuery(event.target.value);
@@ -18,8 +20,11 @@ const App = () => {
 
   useEffect(
     function () {
-      console.log("Effect runned");
-      getData();
+      console.log(timerId.current);
+      if (timerId.current) {
+        clearTimeout(timerId.current);
+      }
+      timerId.current = setTimeout(getData, 300);
     },
     [query],
   );
@@ -41,9 +46,9 @@ const App = () => {
           <p style={style.suggestionHeading}>SUGGESTIONS</p>
 
           {data.map(function (productData) {
-            const { title, thumbnail } = productData;
+            const { title, thumbnail, id } = productData;
             return (
-              <div style={style.suggestion}>
+              <div key={id} style={style.suggestion}>
                 <img style={style.productIcon} src={thumbnail} />
                 <p style={style.suggestionText}>{title}</p>
                 <span style={style.suggestionArrow}>↗</span>
