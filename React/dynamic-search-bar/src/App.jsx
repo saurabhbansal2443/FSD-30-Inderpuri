@@ -9,8 +9,10 @@ const App = () => {
   }
 
   async function getData() {
+    if (query.trim().length == 0) return;
     let apiData = await fetch(getApi(query));
     let data = await apiData.json();
+    console.log(data.products);
     setData(data.products);
   }
 
@@ -38,11 +40,16 @@ const App = () => {
         <div style={style.suggestionContainer}>
           <p style={style.suggestionHeading}>SUGGESTIONS</p>
 
-          <div style={style.suggestion}>
-            {/* <img style={style.productIcon} src="" /> */}
-            <p style={style.suggestionText}>iPhone</p>
-            <span style={style.suggestionArrow}>↗</span>
-          </div>
+          {data.map(function (productData) {
+            const { title, thumbnail } = productData;
+            return (
+              <div style={style.suggestion}>
+                <img style={style.productIcon} src={thumbnail} />
+                <p style={style.suggestionText}>{title}</p>
+                <span style={style.suggestionArrow}>↗</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -134,6 +141,8 @@ const style = {
   },
 
   productIcon: {
+    height: 20,
+    width: 20,
     fontSize: "20px",
     marginRight: "14px",
   },
