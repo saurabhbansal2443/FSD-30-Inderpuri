@@ -14,8 +14,8 @@ const App = () => {
     if (query.trim().length == 0) return;
     let apiData = await fetch(getApi(query));
     let data = await apiData.json();
-    console.log(data.products);
-    setData(data.products);
+    let products = data.products;
+    setData(products.slice(0, 5));
   }
 
   useEffect(
