@@ -8,8 +8,8 @@ let imagesArray = [Image1, Image2, Image3, Image4];
 
 const Carousel = () => {
   return ( 
-    <div>
-      <img src={imagesArray[0]} alt="" />
+    <div className="w-screen h-[50vh]">
+      <img className="h-full w-full" src={imagesArray[0]} alt="" />
     </div>
   );
 };
